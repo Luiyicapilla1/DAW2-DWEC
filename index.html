@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script defer src="./js/main.js" type="module"></script>
+    <title>Task Manager</title>
+</head>
+<body>
+    <form method="post" action="">
+        <label for="titulo">
+            titulo
+            <input type="text" id="titulo" class="titulo">
+        </label>
+        <label for="descripcion">
+            descripcion
+            <input type="text" id="descripcion" class="descripcion">
+        </label>
+        <select name="prioridad" id="prioridad">
+            <option value="low">low</option>
+            <option value="normal">normal</option>
+            <option value="high">high</option>
+        </select>
+        <input type="hidden" id="completada" class="completada" value="false">
+        <input type="submit" value="Crear tarea" id="submit_button">
+    </form>
+    <form>
+        <select id="filter_status" name="filter_status">
+            <option value="true">Completadas</option>
+            <option value="false">No completadas</option>
+        </select>
+        <input type="submit" id="button_filter_status">
+    </form>
+    <form>
+        <select id="filter_priority" name="filter_priority">
+            <option value="low">Baja</option>
+            <option value="normal">Normal</option>
+            <option value="high">Alta</option>
+        </select>
+        <input type="submit" id="button_filter_priority">
+    </form>
+    <section id="task_list_section">
+
+    </section>
+</body>
+</html>
