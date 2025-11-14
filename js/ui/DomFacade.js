@@ -32,6 +32,7 @@ export class DomFacade{
                 add_task_local_storage(task_list)
                 this.renderTasks(task_list);
             });
+
             this.changeBackGroundColor(task_list[i], task_card);
             task_list_section.appendChild(task_card);
         }

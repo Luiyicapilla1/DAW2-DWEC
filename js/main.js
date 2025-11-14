@@ -6,6 +6,7 @@ import {FilterStrategy} from "./patterns/FilterStrategy.js";
 import {StatusFilter} from "./patterns/StatusFilter.js";
 import {PriorityFilter} from "./patterns/PriorityFilter.js";
 
+const filter_strategy = new FilterStrategy();
 const submit_button = document.getElementById('submit_button');
 const button_filter_status = document.getElementById('button_filter_status');
 const button_filter_priority = document.getElementById('button_filter_priority');
@@ -33,15 +34,13 @@ button_filter_status.addEventListener('click', (e)=>{
     e.preventDefault();
     const filter_status = document.getElementById('filter_status').value;
     const domFacade = new DomFacade();
-    const filter_strategy = new FilterStrategy();
-    filter_strategy.filter = new StatusFilter();
+    filter_strategy.set_filter(new StatusFilter());
     domFacade.renderTasks(filter_strategy.filter_task_list(task_list, filter_status));
 });
 button_filter_priority.addEventListener('click', (e)=>{
     e.preventDefault();
     const filter_status = document.getElementById('filter_priority').value;
     const domFacade = new DomFacade();
-    const filter_strategy = new FilterStrategy();
-    filter_strategy.filter = new PriorityFilter();
+    filter_strategy.set_filter(new PriorityFilter());
     domFacade.renderTasks(filter_strategy.filter_task_list(task_list, filter_status));
 });
